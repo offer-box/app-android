@@ -12,5 +12,10 @@ public class Constants {
 
     public static final String BASE_URL = "https://xxxx";
     public static final String POST_ENV_BIDDING = "bidding";
+    public static final String GET_INFO_OFFER = "bidding";
+    public static final String GET_LIST_OFFER = "bidding";
+    public static final String GET_LIST_PRODUCT = "bidding";
+
+
 
 }

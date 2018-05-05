@@ -6,6 +6,7 @@ package br.com.app.offer_box.model;
 
 public class Bidding {
 
+    int id;
     long lat;
     long lng;
     String product;
@@ -16,6 +17,22 @@ public class Bidding {
         this.lng = lng;
         this.product = product;
         this.qtd = qtd;
+    }
+
+    public Bidding(int id, String product, String qtd, long lat, long lng) {
+        this.id = id;
+        this.lat = lat;
+        this.lng = lng;
+        this.product = product;
+        this.qtd = qtd;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Bidding() {
