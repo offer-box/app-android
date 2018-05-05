@@ -4,6 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.app.offer_box.Bidding">
+    tools:context="br.com.app.offer_box.BiddingActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PRODUTO"/>
+
+        <EditText
+            android:id="@+id/ed_qtd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="QUANTIDADE"/>
+
+        <EditText
+            android:id="@+id/ed_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="LATITUDE"/>
+
+        <EditText
+            android:id="@+id/ed_lng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="LONGITUDE"/>
+
+        <Button
+            android:id="@+id/btn_env"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ENVIAR"
+            />
+
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
