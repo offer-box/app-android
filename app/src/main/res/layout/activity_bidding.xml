@@ -7,33 +7,66 @@
     tools:context="br.com.app.offer_box.BiddingActivity">
 
     <LinearLayout
+        android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/ed_product"
+        <android.support.design.widget.TextInputLayout
+            android:hint="Produto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="PRODUTO"/>
+            android:layout_height="wrap_content">
+            <EditText
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_product"/>
 
-        <EditText
-            android:id="@+id/ed_qtd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="QUANTIDADE"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/ed_lat"
+        <android.support.design.widget.TextInputLayout
+            android:hint="Quantidade"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="LATITUDE"/>
+            android:layout_height="wrap_content">
+            <EditText
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_qtd"/>
 
-        <EditText
-            android:id="@+id/ed_lng"
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:hint="Latidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_lat"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:hint="Longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_lng"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="LONGITUDE"/>
+            android:textSize="12dp"
+            android:text="Tags"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listTag"
@@ -41,6 +74,9 @@
             android:layout_height="200dp" />
 
         <Button
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:id="@+id/btn_env"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

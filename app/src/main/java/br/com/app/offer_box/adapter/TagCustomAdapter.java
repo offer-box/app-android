@@ -26,13 +26,13 @@ public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyVi
     private List<Tag> biddingList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_description;
+//        TextView tv_description;
         CheckBox cb_checked;
         LinearLayout ll_line;
 
         public MyViewHolder(View view) {
             super(view);
-            tv_description =  view.findViewById(R.id.tv_description);
+//            tv_description =  view.findViewById(R.id.tv_description);
             cb_checked =  view.findViewById(R.id.cb_checked);
             ll_line = (LinearLayout) view.findViewById(R.id.ll_line);
         }
@@ -55,7 +55,8 @@ public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyVi
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
         final Tag tag = biddingList.get(position);
-        holder.tv_description.setText("" + tag.getDescription());
+//        holder.tv_description.setText("" + tag.getDescription());
+        holder.cb_checked.setText("" + tag.getDescription());
 
         holder.ll_line.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,21 +1,35 @@
 package br.com.app.offer_box;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.app.offer_box.adapter.OfferCustomAdapter;
 import br.com.app.offer_box.adapter.TagCustomAdapter;
+import br.com.app.offer_box.helper.GPSTracker;
 import br.com.app.offer_box.model.Bidding;
 import br.com.app.offer_box.model.Tag;
 import br.com.app.offer_box.webservice.APIClient;
@@ -49,6 +63,8 @@ public class BiddingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bidding);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ed_product = (EditText) findViewById(R.id.ed_product);
         ed_qtd = (EditText) findViewById(R.id.ed_qtd);
         ed_lat = (EditText) findViewById(R.id.ed_lat);
@@ -56,7 +72,9 @@ public class BiddingActivity extends AppCompatActivity {
         btn_env = (Button) findViewById(R.id.btn_env);
 
         recyclerView = (RecyclerView) findViewById(R.id.listTag);
-        mLayoutManager = new LinearLayoutManager(this);
+//        mLayoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
 
         tagCustomAdapter = null;
@@ -97,6 +115,30 @@ public class BiddingActivity extends AppCompatActivity {
                 envBidding(bidding);
             }
         });
+
+        getGeoLocation();
+    }
+
+    GPSTracker gps;
+
+    public void getGeoLocation() {
+        gps = new GPSTracker(BiddingActivity.this);
+        // check if GPS enabled
+        if(gps.canGetLocation()){
+            double latitude = gps.getLatitude();
+            double longitude = gps.getLongitude();
+
+            ed_lat.setText(String.valueOf(latitude));
+            ed_lng.setText(String.valueOf(longitude));
+
+            // \n is for new line
+            Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+        }else{
+            // can't get location
+            // GPS or Network is not enabled
+            // Ask user to enable GPS/network in settings
+            gps.showSettingsAlert();
+        }
     }
 
 
@@ -118,6 +160,16 @@ public class BiddingActivity extends AppCompatActivity {
                 Log.e("Networking", t.toString());
             }
         });
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

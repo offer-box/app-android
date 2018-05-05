@@ -59,8 +59,8 @@ public class BiddingCustomAdapter extends RecyclerView.Adapter<BiddingCustomAdap
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         final Bidding bidding = biddingList.get(position);
-        holder.tv_product.setText("" + bidding.getProduct());
-        holder.tv_qtd.setText("" + bidding.getQtd());
+        holder.tv_product.setText("Product/Service: " + bidding.getProduct());
+        holder.tv_qtd.setText("Amount: " + bidding.getQtd());
 //        holder.iv_icon.setImageResource(R.drawable.computer);
 
 
