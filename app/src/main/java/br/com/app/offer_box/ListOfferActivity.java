@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,6 @@ public class ListOfferActivity extends AppCompatActivity {
     private APIInterface apiService;
     private Call<ArrayList<OfferProduct>> callListOffer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,8 @@ public class ListOfferActivity extends AppCompatActivity {
 
         Intent myIntent = getIntent();
         id = myIntent.getStringExtra("id");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.listOffer);
         mLayoutManager = new LinearLayoutManager(this);
@@ -64,9 +66,16 @@ public class ListOfferActivity extends AppCompatActivity {
                 Log.e("Networking", t.toString());
             }
         });
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+        }
 
-
+        return super.onOptionsItemSelected(item);
     }
 }
