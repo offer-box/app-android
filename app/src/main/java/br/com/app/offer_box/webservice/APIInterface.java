@@ -16,7 +16,6 @@ import retrofit2.http.Query;
  */
 
 public interface APIInterface {
-
     @POST(Constants.POST_ENV_BIDDING)
     Call<String> envBidding(@Body Bidding bidding);
 
@@ -26,8 +25,10 @@ public interface APIInterface {
     @GET(Constants.GET_LIST_OFFER)
     Call<ArrayList<OfferProduct>> getListOffer(@Query("id_product") String id_product);
 
-    @GET(Constants.GET_LIST_PRODUCT)
+    @GET(Constants.GET_LIST_BIDDING)
     Call<ArrayList<Bidding>> getListBidding();
 
+    @GET(Constants.GET_LIST_TAG)
+    Call<ArrayList<String>> getListTag();
 
 }

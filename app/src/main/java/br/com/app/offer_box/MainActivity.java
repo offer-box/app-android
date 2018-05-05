@@ -43,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
 
-
-
-        apiService = APIClient.getService().create(APIInterface.class);
+        apiService = APIClient.getServiceNode().create(APIInterface.class);
         callListBidding = apiService.getListBidding();
 
         callListBidding.enqueue(new Callback<ArrayList<Bidding>>() {
@@ -53,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Bidding>> call, Response<ArrayList<Bidding>> response) {
 
                 ArrayList<Bidding> result = response.body();
-                Log.e("Response", result.toString());
+
+                BiddingCustomAdapter biddingCustomAdapter;
+                biddingCustomAdapter = new BiddingCustomAdapter(MainActivity.this, result);
+
+                recyclerView.setAdapter(biddingCustomAdapter);
 
             }
 
@@ -63,10 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BiddingCustomAdapter biddingCustomAdapter;
-        biddingCustomAdapter = new BiddingCustomAdapter(MainActivity.this, biddings);
 
-        recyclerView.setAdapter(biddingCustomAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

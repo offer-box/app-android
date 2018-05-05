@@ -35,13 +35,17 @@
             android:layout_height="wrap_content"
             android:hint="LONGITUDE"/>
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listTag"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
         <Button
             android:id="@+id/btn_env"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ENVIAR"
             />
-
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
