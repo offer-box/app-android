@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#202020</color>
     <color name="colorText">#FFF</color>
+
+    <color name="introColor1">#454545</color>
+    <color name="introColor2">#454545</color>
+    <color name="introColor3">#454545</color>
 </resources>

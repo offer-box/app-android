@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">OfferBox</string>
     <string name="action_settings">Settings</string>
+
+    <string name="intro_1_title">Traction of micro entrepreneurs</string>
+    <string name="intro_1_desc">The smaller the company the greater the advantages</string>
+
+    <string name="intro_2_title">Match</string>
+    <string name="intro_2_desc">Match between bidders and entrepreneurs</string>
+
+    <string name="intro_3_title">Simple</string>
+    <string name="intro_3_desc">In a few clicks contracts are closed!</string>
 </resources>
