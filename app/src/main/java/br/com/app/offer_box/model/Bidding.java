@@ -10,13 +10,23 @@ import java.util.List;
 public class Bidding {
 
     int id;
-    long lat;
-    long lng;
+    String lat;
+    String lng;
     String product;
     String qtd;
     List<Tag> tags;
+    String tagId;
 
-    public Bidding(String product, String qtd, long lat, long lng, List<Tag> tags) {
+    public Bidding(String product, String qtd, String lat, String lng, List<Tag> tags, String tagId) {
+        this.lat = lat;
+        this.lng = lng;
+        this.product = product;
+        this.qtd = qtd;
+        this.tags = tags;
+        this.tagId = tagId;
+    }
+
+    public Bidding(String product, String qtd, String lat, String lng, List<Tag> tags) {
         this.lat = lat;
         this.lng = lng;
         this.product = product;
@@ -24,13 +34,15 @@ public class Bidding {
         this.tags = tags;
     }
 
-    public Bidding(int id, String product, String qtd, long lat, long lng, List<Tag> tags) {
+
+    public Bidding(int id, String product, String qtd, String lat, String lng, List<Tag> tags, String tagId) {
         this.id = id;
         this.lat = lat;
         this.lng = lng;
         this.product = product;
         this.qtd = qtd;
         this.tags = tags;
+        this.tagId = tagId;
     }
 
     public int getId() {
@@ -45,19 +57,19 @@ public class Bidding {
 
     }
 
-    public long getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public void setLat(long lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public long getLng() {
+    public String getLng() {
         return lng;
     }
 
-    public void setLng(long lng) {
+    public void setLng(String lng) {
         this.lng = lng;
     }
 
@@ -83,5 +95,13 @@ public class Bidding {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public String getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(String tagId) {
+        this.tagId = tagId;
     }
 }

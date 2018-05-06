@@ -3,6 +3,7 @@ package br.com.app.offer_box.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
         TextView tv_qtd_offers_company;
         TextView tv_type_company;
         ImageView iv_icon;
+        ImageView iv_star;
         LinearLayout ll_line;
 
         public MyViewHolder(View view) {
@@ -48,6 +50,7 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
             tv_type_company = (TextView) view.findViewById(R.id.tv_type_company);
 
             iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
+            iv_star = (ImageView) view.findViewById(R.id.iv_star);
             ll_line = (LinearLayout) view.findViewById(R.id.ll_line);
         }
     }
@@ -72,15 +75,19 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
         holder.tv_price_unit.setText("Price (Unit): " + String.valueOf(offerProduct.getPrice_unit()));
         holder.tv_name_company.setText("Name Company: " + String.valueOf(offerProduct.getName_company()));
 //        holder.tv_name_product.setText("Name Product/Service: " + String.valueOf(offerProduct.getProduct()));
-        holder.tv_distance.setText("" + offerProduct.getDistance());
+        holder.tv_distance.setText("" + offerProduct.getDistance() + "km");
         holder.tv_qtd_offers_company.setText("Amount Offers Company: " + String.valueOf(offerProduct.getQtd_offers_company()));
         holder.tv_type_company.setText("Type Company: " + offerProduct.getType_company());
+
+        if(offerProduct.isInterested()) {
+            holder.iv_star.setVisibility(View.VISIBLE);
+        }
 
         holder.ll_line.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, InfoOfferActivity.class);
-                intent.putExtra("id", "" + offerProduct.getId());
+                intent.putExtra("id", "" + offerProduct.get_id());
                 mContext.startActivity(intent);
             }
         });

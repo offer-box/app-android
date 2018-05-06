@@ -23,7 +23,7 @@ import br.com.app.offer_box.model.Tag;
 public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Tag> biddingList;
+    private List<Tag> tagList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 //        TextView tv_description;
@@ -40,7 +40,7 @@ public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyVi
 
     public TagCustomAdapter(Context mContext, List<Tag> tagList) {
         this.mContext = mContext;
-        this.biddingList = tagList;
+        this.tagList = tagList;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyVi
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        final Tag tag = biddingList.get(position);
+        final Tag tag = tagList.get(position);
 //        holder.tv_description.setText("" + tag.getDescription());
         holder.cb_checked.setText("" + tag.getDescription());
 
@@ -68,18 +68,27 @@ public class TagCustomAdapter extends RecyclerView.Adapter<TagCustomAdapter.MyVi
         holder.cb_checked.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                biddingList.get(position).setChecked(isChecked);
+                tagList.get(position).setChecked(isChecked);
             }
         });
 
     }
 
     public List<Tag> getListTag() {
-        return biddingList;
+
+        List<Tag> tagListResult = new ArrayList<Tag>();
+
+        for(Tag tag : tagList) {
+            if(tag.isChecked() == true) {
+                tagListResult.add(tag);
+            }
+        }
+
+        return tagListResult;
     }
 
     @Override
     public int getItemCount() {
-        return biddingList.size();
+        return tagList.size();
     }
 }

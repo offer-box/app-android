@@ -26,7 +26,7 @@ public class ListOfferActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinearLayoutManager mLayoutManager;
 
-    private String id;
+    private String product;
 
     private APIInterface apiService;
     private Call<ArrayList<OfferProduct>> callListOffer;
@@ -37,7 +37,7 @@ public class ListOfferActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_offer);
 
         Intent myIntent = getIntent();
-        id = myIntent.getStringExtra("id");
+        product = myIntent.getStringExtra("product");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -45,8 +45,8 @@ public class ListOfferActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        apiService = APIClient.getServiceJava().create(APIInterface.class);
-        callListOffer = apiService.getListOffer(id);
+        apiService = APIClient.getServiceNode().create(APIInterface.class);
+        callListOffer = apiService.getListOffer(product);
 
         callListOffer.enqueue(new Callback<ArrayList<OfferProduct>>() {
             @Override

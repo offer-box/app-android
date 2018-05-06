@@ -6,18 +6,19 @@ package br.com.app.offer_box.model;
 
 public class OfferProduct {
 
-    int id;
+    String _id;
     double price_unit;
-    int id_company;
+    String id_company;
     String name_company;
-    int id_bidding;
+    String id_bidding;
     String product;
     String distance;
     int qtd_offers_company;
     String type_company;
+    boolean interested;
 
-    public OfferProduct(int id, double price_unit, int id_company, String name_company, int id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
-        this.id = id;
+    public OfferProduct(String _id, double price_unit, String id_company, String name_company, String id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
+        this._id = _id;
         this.price_unit = price_unit;
         this.id_company = id_company;
         this.id_bidding = id_bidding;
@@ -29,7 +30,7 @@ public class OfferProduct {
         this.product = product;
     }
 
-    public OfferProduct(double price_unit, int id_company, String name_company, int id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
+    public OfferProduct(double price_unit, String id_company, String name_company, String id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
         this.price_unit = price_unit;
         this.id_company = id_company;
         this.id_bidding = id_bidding;
@@ -45,12 +46,20 @@ public class OfferProduct {
 
     }
 
-    public int getId() {
-        return id;
+    public String get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public boolean isInterested() {
+        return interested;
+    }
+
+    public void setInterested(boolean interested) {
+        this.interested = interested;
     }
 
     public double getPrice_unit() {
@@ -61,19 +70,19 @@ public class OfferProduct {
         this.price_unit = price_unit;
     }
 
-    public int getId_company() {
+    public String getId_company() {
         return id_company;
     }
 
-    public void setId_company(int id_company) {
+    public void setId_company(String id_company) {
         this.id_company = id_company;
     }
 
-    public int getId_bidding() {
+    public String getId_bidding() {
         return id_bidding;
     }
 
-    public void setId_bidding(int id_bidding) {
+    public void setId_bidding(String id_bidding) {
         this.id_bidding = id_bidding;
     }
 

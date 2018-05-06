@@ -13,16 +13,15 @@ public class APIClient {
     private static Retrofit retrofit = null;
 
     public static Retrofit getServiceNode() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL_NODE).addConverterFactory(GsonConverterFactory.create()).build();
-        }
+        retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL_NODE).addConverterFactory(GsonConverterFactory.create()).build();
+
         return retrofit;
     }
 
     public static Retrofit getServiceJava() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL_JAVA).addConverterFactory(GsonConverterFactory.create()).build();
-        }
+
+        retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL_JAVA).addConverterFactory(GsonConverterFactory.create()).build();
+
         return retrofit;
     }
 }

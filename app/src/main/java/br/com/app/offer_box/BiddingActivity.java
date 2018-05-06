@@ -110,8 +110,7 @@ public class BiddingActivity extends AppCompatActivity {
                 qtd = ed_qtd.getText().toString();
                 lat = ed_lat.getText().toString();
                 lng = ed_lng.getText().toString();
-
-                Bidding bidding = new Bidding(product, qtd, Long.parseLong(lat), Long.parseLong(lng), tagCustomAdapter.getListTag());
+                Bidding bidding = new Bidding(product, qtd, lat, lng, tagCustomAdapter.getListTag());
                 envBidding(bidding);
             }
         });
@@ -151,7 +150,8 @@ public class BiddingActivity extends AppCompatActivity {
             public void onResponse(Call<String> call, Response<String> response) {
 
                 String result = response.body();
-                Log.e("Response", result.toString());
+                Toast.makeText(getApplicationContext(), "Insert Success", Toast.LENGTH_LONG).show();
+                onBackPressed();
 
             }
 

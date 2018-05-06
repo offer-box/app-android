@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ed_product"/>
@@ -29,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ed_qtd"/>
@@ -80,7 +78,7 @@
             android:id="@+id/btn_env"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ENVIAR"
+            android:text="Send"
             />
 
     </LinearLayout>

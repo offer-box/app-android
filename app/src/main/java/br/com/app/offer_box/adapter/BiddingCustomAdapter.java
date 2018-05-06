@@ -69,7 +69,7 @@ public class BiddingCustomAdapter extends RecyclerView.Adapter<BiddingCustomAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ListOfferActivity.class);
-                intent.putExtra("id", "" + bidding.getId());
+                intent.putExtra("product", "" + bidding.getProduct());
                 mContext.startActivity(intent);
             }
         });
