@@ -9,12 +9,14 @@ public class OfferProduct {
     int id;
     double price_unit;
     int id_company;
+    String name_company;
     int id_bidding;
+    String product;
     String distance;
     int qtd_offers_company;
     String type_company;
 
-    public OfferProduct(int id, double price_unit, int id_company, int id_bidding, String distance, int qtd_offers_company, String type_company) {
+    public OfferProduct(int id, double price_unit, int id_company, String name_company, int id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
         this.id = id;
         this.price_unit = price_unit;
         this.id_company = id_company;
@@ -23,9 +25,11 @@ public class OfferProduct {
         this.distance = distance;
         this.qtd_offers_company = qtd_offers_company;
         this.type_company = type_company;
+        this.name_company = name_company;
+        this.product = product;
     }
 
-    public OfferProduct(double price_unit, int id_company, int id_bidding, String distance, int qtd_offers_company, String type_company) {
+    public OfferProduct(double price_unit, int id_company, String name_company, int id_bidding, String product, String distance, int qtd_offers_company, String type_company) {
         this.price_unit = price_unit;
         this.id_company = id_company;
         this.id_bidding = id_bidding;
@@ -33,6 +37,8 @@ public class OfferProduct {
         this.distance = distance;
         this.qtd_offers_company = qtd_offers_company;
         this.type_company = type_company;
+        this.name_company = name_company;
+        this.product = product;
     }
 
     public OfferProduct() {
@@ -93,5 +99,21 @@ public class OfferProduct {
 
     public void setType_company(String type_company) {
         this.type_company = type_company;
+    }
+
+    public String getName_company() {
+        return name_company;
+    }
+
+    public void setName_company(String name_company) {
+        this.name_company = name_company;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
     }
 }

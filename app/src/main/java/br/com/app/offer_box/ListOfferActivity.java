@@ -45,7 +45,7 @@ public class ListOfferActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        apiService = APIClient.getServiceNode().create(APIInterface.class);
+        apiService = APIClient.getServiceJava().create(APIInterface.class);
         callListOffer = apiService.getListOffer(id);
 
         callListOffer.enqueue(new Callback<ArrayList<OfferProduct>>() {

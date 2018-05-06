@@ -14,10 +14,11 @@
         android:layout_height="60dp"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
+        android:src="@drawable/logo_offer" />
 
     <LinearLayout
-        android:layout_width="140dp"
+        android:paddingTop="10dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -28,48 +29,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
-
-        <TextView
-            android:id="@+id/tv_id_company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
-
-        <TextView
-            android:id="@+id/tv_id_bidding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
-
-        <TextView
-            android:id="@+id/tv_distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
-
-        <TextView
-            android:id="@+id/tv_qtd_offers_company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
+            android:textStyle="bold"
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/tv_type_company"
@@ -77,9 +38,36 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:layout_marginTop="20dp"
-            android:lines="1" />
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:gravity="left"/>
 
+        <TextView
+            android:id="@+id/tv_name_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="11dp"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/tv_qtd_offers_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="11dp"
+            android:gravity="left"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:gravity="left" />
 </LinearLayout>

@@ -30,7 +30,7 @@ public class InfoOfferActivity extends AppCompatActivity {
         Intent myIntent = getIntent();
         id = myIntent.getStringExtra("id");
 
-        apiService = APIClient.getServiceNode().create(APIInterface.class);
+        apiService = APIClient.getServiceJava().create(APIInterface.class);
         callInfoOffer = apiService.getInfoOffer(id);
 
         callInfoOffer.enqueue(new Callback<OfferProduct>() {

@@ -29,8 +29,8 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_price_unit;
-        TextView tv_id_company;
-        TextView tv_id_bidding;
+        TextView tv_name_company;
+//        TextView tv_name_product;
         TextView tv_distance;
         TextView tv_qtd_offers_company;
         TextView tv_type_company;
@@ -41,8 +41,8 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
             super(view);
 
             tv_price_unit = (TextView) view.findViewById(R.id.tv_price_unit);
-            tv_id_company = (TextView) view.findViewById(R.id.tv_id_company);
-            tv_id_bidding = (TextView) view.findViewById(R.id.tv_id_bidding);
+            tv_name_company = (TextView) view.findViewById(R.id.tv_name_company);
+//            tv_name_product = (TextView) view.findViewById(R.id.tv_name_product);
             tv_distance = (TextView) view.findViewById(R.id.tv_distance);
             tv_qtd_offers_company = (TextView) view.findViewById(R.id.tv_qtd_offers_company);
             tv_type_company = (TextView) view.findViewById(R.id.tv_type_company);
@@ -69,12 +69,12 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         final OfferProduct offerProduct = offerList.get(position);
-        holder.tv_price_unit.setText("" + String.valueOf(offerProduct.getPrice_unit()));
-        holder.tv_id_company.setText("" + String.valueOf(offerProduct.getId_company()));
-        holder.tv_id_bidding.setText("" + String.valueOf(offerProduct.getId_bidding()));
+        holder.tv_price_unit.setText("Price (Unit): " + String.valueOf(offerProduct.getPrice_unit()));
+        holder.tv_name_company.setText("Name Company: " + String.valueOf(offerProduct.getName_company()));
+//        holder.tv_name_product.setText("Name Product/Service: " + String.valueOf(offerProduct.getProduct()));
         holder.tv_distance.setText("" + offerProduct.getDistance());
-        holder.tv_qtd_offers_company.setText("" + String.valueOf(offerProduct.getQtd_offers_company()));
-        holder.tv_type_company.setText("" + offerProduct.getType_company());
+        holder.tv_qtd_offers_company.setText("Amount Offers Company: " + String.valueOf(offerProduct.getQtd_offers_company()));
+        holder.tv_type_company.setText("Type Company: " + offerProduct.getType_company());
 
         holder.ll_line.setOnClickListener(new View.OnClickListener() {
             @Override
