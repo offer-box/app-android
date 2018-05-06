@@ -60,7 +60,7 @@ public class InfoOfferActivity extends AppCompatActivity {
         type_company = findViewById(R.id.type_company);
         btn_interested = findViewById(R.id.btn_interested);
 
-        btn_interested.setText("I'm interested");
+        btn_interested.setText("Estou interessado");
 
         btn_interested.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -59,8 +59,8 @@ public class BiddingCustomAdapter extends RecyclerView.Adapter<BiddingCustomAdap
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         final Bidding bidding = biddingList.get(position);
-        holder.tv_product.setText("Product/Service: " + bidding.getProduct());
-        holder.tv_qtd.setText("Amount: " + bidding.getQtd());
+        holder.tv_product.setText("Produto/Serviço: " + bidding.getProduct());
+        holder.tv_qtd.setText("Quantidade: " + bidding.getQtd());
 //        holder.iv_icon.setImageResource(R.drawable.computer);
 
 
@@ -69,7 +69,7 @@ public class BiddingCustomAdapter extends RecyclerView.Adapter<BiddingCustomAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ListOfferActivity.class);
-                intent.putExtra("product", "" + bidding.getProduct());
+                intent.putExtra("produto", "" + bidding.getProduct());
                 mContext.startActivity(intent);
             }
         });

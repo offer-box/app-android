@@ -72,12 +72,12 @@ public class OfferCustomAdapter extends RecyclerView.Adapter<OfferCustomAdapter.
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         final OfferProduct offerProduct = offerList.get(position);
-        holder.tv_price_unit.setText("Price (Unit): " + String.valueOf(offerProduct.getPrice_unit()));
-        holder.tv_name_company.setText("Name Company: " + String.valueOf(offerProduct.getName_company()));
+        holder.tv_price_unit.setText("Preço (Unidade): " + String.valueOf(offerProduct.getPrice_unit()));
+        holder.tv_name_company.setText("Nome da Empresa: " + String.valueOf(offerProduct.getName_company()));
 //        holder.tv_name_product.setText("Name Product/Service: " + String.valueOf(offerProduct.getProduct()));
         holder.tv_distance.setText("" + offerProduct.getDistance() + "km");
-        holder.tv_qtd_offers_company.setText("Amount Offers Company: " + String.valueOf(offerProduct.getQtd_offers_company()));
-        holder.tv_type_company.setText("Type Company: " + offerProduct.getType_company());
+        holder.tv_qtd_offers_company.setText("Quantidade de ofertas feitas pela companhia: " + String.valueOf(offerProduct.getQtd_offers_company()));
+        holder.tv_type_company.setText("Tipo da companhia (porte): " + offerProduct.getType_company());
 
         if(offerProduct.isInterested()) {
             holder.iv_star.setVisibility(View.VISIBLE);

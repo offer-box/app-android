@@ -126,7 +126,7 @@ public class BiddingActivity extends AppCompatActivity {
         if(gps.canGetLocation()){
             double latitude = gps.getLatitude();
             double longitude = gps.getLongitude();
-
+            
             ed_lat.setText(String.valueOf(latitude));
             ed_lng.setText(String.valueOf(longitude));
 
